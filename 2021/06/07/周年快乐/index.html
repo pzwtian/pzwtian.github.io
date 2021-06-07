@@ -584,12 +584,10 @@
       
       
       
-      
         <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-spinner fa-spin fa-fw"></i>
-          </div>
+          <div id="gitalk-container"></div>
         </section>
+      
       
     </section>
   </article>
@@ -1045,39 +1043,24 @@
 
 
 
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  
-    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "7894871002cb76f0a486",
+      clientSecret: "faa8f1d0f7f2fbdfcc6058c5141b346bc8093c2b",
+      repo: "pzwtian.github.io",
+      owner: "pzwtian",
+      admin: "pzwtian",
       
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js"></script>
-
-    
-  
-  <script>
-  var GUEST_INFO = ['nick','mail','link'];
-  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var notify = 'false' == true;
-  var verify = 'false' == true;
-  var valine = new Valine();
-  valine.init({
-    el: '#valine_container',
-    notify: notify,
-    verify: verify,
-    guest_info: guest_info,
-    
-    appId: "yKjEFUJEpvWtSMa8SDVCSWCi-gzGzoHsz",
-    appKey: "pR3FhI5kVd7l2galzRAQ1mUe",
-    placeholder: "快来评论吧~",
-    pageSize:'10',
-    avatar:'mp',
-    lang:'zh-cn',
-    highlight:'false'
-  })
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
   </script>
+
+
 
 
 
